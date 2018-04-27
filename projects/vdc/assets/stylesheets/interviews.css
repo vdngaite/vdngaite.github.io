@@ -1,0 +1,75 @@
+body{
+  padding: 0;
+  margin: 0;
+  /*height: 100%;
+  width: 100%;*/
+}
+
+/* LOGOS */
+#back{
+	height:70px;
+	width:80px;
+	padding-top:20px;
+}
+#gaite{
+	width:100px;
+	height:100px;
+}
+#vdc{
+	padding-top:10px;
+	width:100%;
+}
+
+.logo-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+  position:fixed;
+  width:100%;
+  background-color:white;
+  box-shadow: 0px 1px 30px 1px grey;
+
+}
+
+.logo-item {
+  width: 200px;
+  text-align:center;
+  margin:10px;
+}
+
+.photo1 {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/../images/background.jpg");
+    width: 100vw;
+    height: 100vh;
+}
+
+.interview-container{
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.interview-header {
+  height: 100vh;
+  width: 100vw;
+}
+.interview-content-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  -webkit-flex-flow: row wrap;
+  background-color: tomato;
+  justify-content: center;
+}
+
+.interview-content {
+  text-align: center;
+  background-color: yellow;
+  margin: auto;
+}
