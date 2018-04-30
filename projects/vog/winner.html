@@ -21,14 +21,16 @@
     <!-- Custom CSS -->
     <link href="../../css/vog.css" rel="stylesheet">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118352218-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-118342893-1',
-        'page_title' : 'winner',
-        'page_path': window.location.href
+      gtag('config', 'UA-118352218-1', {
+        'page_title' : 'VOG/winner',
+        'page_path': location.pathname
       });
     </script>
 
@@ -327,6 +329,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="../../js/stylish-portfolio.min.js"></script>
+
+    <!-- RGPD-->
+    <script src="../../js/Cookie-consent_Google-Analytics-master/Tag_google_analytics.js"></script>
 
   </body>
 

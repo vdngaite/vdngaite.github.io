@@ -28,9 +28,12 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-118342893-1');
+      gtag('config', 'UA-118342893-1', {
+        'page_title' : 'homepage',
+        'page_path': '/'
+      });
     </script>
-    
+
   </head>
 
   <body id="page-top">
@@ -246,6 +249,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
+
+    <!-- RGPD-->
+    <script src="js/Cookie-consent_Google-Analytics-master/Tag_google_analytics.js"></script>
 
   </body>
 
