@@ -1,0 +1,276 @@
+@import "normalize";
+@import "variables";
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+.folder-section{
+  background:#E5E5E3;
+}
+
+.grid {
+	flex: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+
+.grid__item {
+	padding: #{$grid-item-padding};
+}
+
+
+/* Folder */
+.folder {
+	position: relative;
+	z-index: 100;
+	width: #{$folder-width};
+}
+
+.folder__feedback {
+	position: absolute;
+	width: #{$thumb-width};
+	height: #{$thumb-width};
+	border-radius: 50%;
+	background: #181a1c;
+	top: 50%;
+	left: 50%;
+	margin: calc(#{$thumb-width} / -2 + #{$folder-slip-height} / 2) 0 0 calc(#{$thumb-width} / -2);
+	pointer-events: none;
+	opacity: 0;
+}
+
+.folder__icon {
+	position: relative;
+	width: 100%;
+	height: #{$folder-height};
+	cursor: pointer;
+}
+
+.folder__icon--perspective {
+	perspective: 800px;
+}
+
+.folder__icon-img {
+	backface-visibility: hidden;
+	transform-origin: 50% 100%;
+}
+
+.folder__icon-img,
+.folder__icon-svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.folder__icon--perspective .folder__icon-img,
+.folder__icon--perspective .folder__icon-svg {
+	transform-style: preserve-3d;
+}
+
+.folder__icon-svg {
+	fill: currentColor;
+}
+
+.folder__icon-svg--deco {
+	color: #76767f;
+	width: #{$folder-deco-width};
+	height: #{$folder-deco-width};
+	top: 50%;
+	left: 50%;
+	margin: calc( (#{$folder-deco-width} / -2) + #{$folder-slip-height} / 2 ) 0 0 calc(#{$folder-deco-width} / -2);
+}
+
+/* Inner paper sheets */
+.folder__icon-deco {
+	position: absolute;
+	bottom: 2px;
+	left: 2px;
+	width: calc(#{$folder-width} - 4px);
+	height: calc(#{$folder-cover-height} - 4px);
+	border-radius: #{$folder-border-radius};
+	background-color: #fff;
+}
+
+.folder__preview {
+	pointer-events: none;
+	position: absolute;
+}
+
+.folder__preview--thumbs {
+	width: #{$thumb-width};
+	height: #{$thumb-width};
+	top: calc(#{$folder-height} + #{$folder-slip-height} / 2 - #{$thumb-width} / 2);
+	left: calc(#{$folder-width} / 2 - #{$thumb-width} / 2);
+}
+
+.folder__preview--text {
+	position: absolute;
+	left: 100%;
+	top: #{$folder-slip-height};
+	padding: 0 2em;
+	opacity: 0;
+}
+
+.folder__preview--magnifier {
+	top: 50%;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	align-content: space-between;
+	left: 50%;
+	background: #fff;
+	width: calc(#{$thumb-width} * 5);
+	height: calc(#{$thumb-width} * 5);
+	margin: calc(#{$thumb-width} * 5 / -2) 0 0 calc(#{$thumb-width} * 5 / -2);
+	padding: 3.5em;
+	border-radius: 50%;
+	opacity: 0;
+}
+
+.folder__preview--bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.folder__thumb {
+	max-width: 100%;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.folder__detail {
+	margin: 0;
+}
+
+.folder__detail-svg {
+	width: 2em;
+	height: 2em;
+	position: relative;
+	fill: #ddd;
+}
+
+.folder__detail-svg--gif {
+	fill: #5cc7be;
+}
+
+.folder__detail-svg--txt {
+	fill: #b8d8fb;
+}
+
+.folder__detail-svg--mp3 {
+	fill: #fbcf7b;
+}
+
+.folder__detail-text {
+	display: block;
+	font-size: 68.5%;
+}
+
+.folder__caption {
+	position: relative;
+	display: inline-block;
+	line-height: 1.15;
+	margin: 0.75em 0 0;
+	font-size: #{$folder-title-size};
+}
+
+
+
+/* Dummy */
+.dummy {
+	position: relative;
+	flex: none;
+	pointer-events: none;
+}
+
+.dummy::after {
+	content: '';
+	position: relative;
+	display: block;
+	margin: 0 0.35em;
+	width: calc(#{$folder-width} * 0.6);
+	height: #{$folder-title-size};
+	background: currentColor;
+	opacity: 0.5;
+}
+
+.dummy svg {
+	fill: currentColor;
+	opacity: 0.3;
+	display: block;
+	width: #{$folder-width};
+	height: #{$folder-height};
+	margin-bottom: 0.75em;
+}
+
+
+
+/* ravi */
+.content--ravi {
+	background-color: #e6e6e4;
+	color: #c3c3b6;
+}
+
+.content--ravi::after {
+	color: #F7230C;
+}
+
+.folder--ravi .folder__icon-img--back {
+	color: #F7230C;
+}
+
+.folder--ravi .folder__icon-img--cover {
+	color: #FF5E4D;
+}
+
+.folder--ravi .folder__icon-svg--deco {
+	color: #fff;
+}
+
+.folder--ravi .folder__caption {
+	color: #F7230C;
+}
+
+.folder--ravi .folder__feedback {
+	background-color: #fff;
+}
+
+.folder--ravi .folder__preview--thumbs {
+	width: 75px;
+	height: 65px;
+	top: calc((#{$folder-height} + #{$folder-slip-height}) / 2 - 65px / 2);
+	left: calc(#{$folder-width} / 2 - 75px / 2);
+}
+
+@media screen and (max-width: 42em) {
+	.dummy {
+		opacity: 0;
+	}
+	.codrops-header {
+		height: auto;
+		min-height: 0;
+		padding: 12.5vh 0.5em;
+	}
+	.codrops-header__title {
+		font-size: 1.5em;
+	}
+
+	.grid__item{
+		padding:0;
+	}
+
+}
